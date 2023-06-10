@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect, useState } from 'react';
+import MessengerPopup from '~/components/Chat/MessengerPopup';
 
 import styles from './Home.module.scss';
 import CrossBar from '~/components/CrossBar';
@@ -52,6 +53,7 @@ function Home() {
           </Button>
         </div>
       </div>
+      <MessengerPopup />
     </div>
   );
 }
