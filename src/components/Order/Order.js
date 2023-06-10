@@ -33,7 +33,7 @@ function Order({ data, icon }) {
   const handleChangeStatus = async (id) => {
     await axios
       .put(
-        `http://localhost:5000/api/order/changeStatus/${id}`,
+        `https://pbl5-server-shpk.onrender.com/api/order/changeStatus/${id}`,
         {},
         {
           headers: {

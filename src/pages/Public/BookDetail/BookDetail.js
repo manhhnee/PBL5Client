@@ -77,7 +77,7 @@ function BookDetail() {
 
   useEffect(() => {
     const fetchAPIBooks = async () => {
-      const response = await axios.get(`http://localhost:5000/api/book/detail/${id}`);
+      const response = await axios.get(`https://pbl5-server-shpk.onrender.com/api/book/detail/${id}`);
       const booksData = await response.data;
       setBook(booksData.book);
       setTotalRating(booksData.book.stars);
@@ -95,7 +95,7 @@ function BookDetail() {
     } else {
       await axios
         .post(
-          'http://localhost:5000/api/cart/add',
+          'https://pbl5-server-shpk.onrender.com/api/cart/add',
           {
             id_BookSupplier: id_BookSupplier,
             quantity: quantity,
@@ -126,7 +126,7 @@ function BookDetail() {
       } else {
         await axios
           .post(
-            'http://localhost:5000/api/order/addOneItem',
+            'https://pbl5-server-shpk.onrender.com/api/order/addOneItem',
             {
               payment: 1,
               id_BookSupplier: id_BookSupplier,
