@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
+import { Flip, ToastContainer, toast } from 'react-toastify';
 
 import Image from '~/components/Image';
 import styles from './Order.module.scss';
@@ -42,11 +43,13 @@ function Order({ data, icon }) {
         },
       )
       .then((res) => {
-        alert(res.data.message);
-        window.location.reload();
+        toast.success(res.data.message);
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
       })
       .catch((e) => {
-        alert(e);
+        toast.success(e);
       });
   };
 
@@ -78,6 +81,19 @@ function Order({ data, icon }) {
   }
   return (
     <div className={cx('order')}>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        transition={Flip}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Image className={cx('order-image')} src={data.Avatar} alt="avatar"></Image>
       {iconComponent}
 
