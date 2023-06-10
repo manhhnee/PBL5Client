@@ -1,0 +1,44 @@
+.wrapper {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: var(--default-border-radius);
+  margin-top: 15px;
+
+  --border-category-item: 22px;
+}
+
+.container {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: var(--default-border-radius);
+  margin-top: 15px;
+  padding: 0 15px;
+}
+
+.content {
+  padding: 12px;
+}
+
+.title-field {
+  border-bottom: 1px solid var(--background-color);
+  padding: 12px 0 12px 12px;
+  font-size: 1.6rem;
+  color: var(--primary);
+
+  .icon-title {
+    margin-right: 22px;
+  }
+}
+
+.prev-arrow {
+  left: -24px;
+}
+.next-arrow {
+  right: -18px;
+}
+
+.next-arrow::before,
+.prev-arrow::before {
+  color: var(--primary);
+  font-size: 25px;
+}
