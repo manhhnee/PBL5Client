@@ -63,7 +63,7 @@ function BookItemHistory() {
 
   useEffect(() => {
     const getApiHistoryDetail = async () => {
-      const response = await axios.get(`https://pbl5-server-shpk.onrender.com/api/order/detail/${id}`, {
+      const response = await axios.get(`http://localhost:5000/api/order/detail/${id}`, {
         headers: {
           Authorization: `Bearer ${getJwtFromCookie()}`,
         },
@@ -77,7 +77,7 @@ function BookItemHistory() {
   const handleRating = async (idBook, star, comment, idOrderItem) => {
     await axios
       .post(
-        'https://pbl5-server-shpk.onrender.com/api/rating/add',
+        'http://localhost:5000/api/rating/add',
         {
           id_Book: idBook,
           star: star,

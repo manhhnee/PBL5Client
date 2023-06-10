@@ -69,7 +69,7 @@ function Header() {
 
   useEffect(() => {
     const getApiProfileCustomer = async () => {
-      const response = await axios.get('https://pbl5-server-shpk.onrender.com/api/user/profile/customer', {
+      const response = await axios.get('http://localhost:5000/api/user/profile/customer', {
         headers: {
           Authorization: `Bearer ${getJwtFromCookie()}`,
         },
@@ -84,7 +84,7 @@ function Header() {
     };
 
     const getApiCountCart = async () => {
-      const response = await axios.get('https://pbl5-server-shpk.onrender.com/api/cart/items', {
+      const response = await axios.get('http://localhost:5000/api/cart/items', {
         headers: {
           Authorization: `Bearer ${getJwtFromCookie()}`,
         },

@@ -42,7 +42,7 @@ function Revenue() {
 
   useEffect(() => {
     const fetchApiRevenue = async (fromDate, toDate) => {
-      const response = await axios.get('https://pbl5-server-shpk.onrender.com/api/order/revenue', {
+      const response = await axios.get('http://localhost:5000/api/order/revenue', {
         params: {
           dateMin: fromDate,
           dateMax: toDate,
@@ -60,7 +60,7 @@ function Revenue() {
     };
 
     const fetchApiRevenueOfYear = async () => {
-      const response = await axios.get('https://pbl5-server-shpk.onrender.com/api/order/revenueOfYear', {
+      const response = await axios.get('http://localhost:5000/api/order/revenueOfYear', {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${getJwtFromCookie()}`,

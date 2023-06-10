@@ -44,7 +44,7 @@ function ManageCategory() {
 
   useEffect(() => {
     const fetchApiCategory = async () => {
-      const response = await axios.get(`https://pbl5-server-shpk.onrender.com/api/category`, {
+      const response = await axios.get(`http://localhost:5000/api/category`, {
         headers: {
           Authorization: `Bearer ${getJwtFromCookie()}`,
         },
@@ -58,7 +58,7 @@ function ManageCategory() {
   const handleAddCategory = async (name, image) => {
     await axios
       .post(
-        'https://pbl5-server-shpk.onrender.com/api/category/add',
+        'http://localhost:5000/api/category/add',
         {
           Name: name,
           Image: image,
@@ -84,7 +84,7 @@ function ManageCategory() {
   const handleUpdateCategory = async (name, image) => {
     axios
       .put(
-        `https://pbl5-server-shpk.onrender.com/api/category/update/${selectedCategoryId}`,
+        `http://localhost:5000/api/category/update/${selectedCategoryId}`,
         {
           Name: name,
           Image: image,
@@ -107,7 +107,7 @@ function ManageCategory() {
 
   const handleDeleteCategory = async () => {
     await axios
-      .delete(`https://pbl5-server-shpk.onrender.com/api/category/delete/${selectedCategoryId}`)
+      .delete(`http://localhost:5000/api/category/delete/${selectedCategoryId}`)
       .then((res) => {
         toast.success(res.data.message);
         setTimeout(() => {

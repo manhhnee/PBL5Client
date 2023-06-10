@@ -41,13 +41,14 @@ function AdminRecent() {
   };
   useEffect(() => {
     const getApiOrderList = async () => {
-      const response = await axios.get('https://pbl5-server-shpk.onrender.com/api/order/orderList', {
+      const response = await axios.get('http://localhost:5000/api/order/orderList', {
         headers: { Authorization: `Bearer ${getJwtFromCookie()}` },
       });
       setOrderList(response.data);
     };
     getApiOrderList();
   }, []);
+
   return (
     <div className={cx('content')}>
       <Menu />
@@ -56,6 +57,7 @@ function AdminRecent() {
       </div>
       <div className={cx('order-list')}>
         {orderList.map((order) => {
+          console.log(order);
           return <Order data={order} icon={getIcon(order.id_Status)}></Order>;
         })}
       </div>

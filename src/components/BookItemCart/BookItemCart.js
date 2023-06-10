@@ -32,7 +32,7 @@ function BookItemCart({ data, onSelect }) {
 
   const handleDeleteCart = async () => {
     await axios
-      .delete(`https://pbl5-server-shpk.onrender.com/api/cart/delete/${data.id}`, {
+      .delete(`http://localhost:5000/api/cart/delete/${data.id}`, {
         headers: { Authorization: `Bearer ${getJwtFromCookie()}` },
       })
       .then((response) => {

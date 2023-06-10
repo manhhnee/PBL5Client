@@ -36,7 +36,7 @@ const PaypalAll = ({ address, orderItems }) => {
 
     await axios
       .post(
-        'https://pbl5-server-shpk.onrender.com/api/order/add',
+        'http://localhost:5000/api/order/add',
         {
           address: address,
           payment: 2,

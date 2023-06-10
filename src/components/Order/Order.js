@@ -7,10 +7,12 @@ import Image from '~/components/Image';
 import styles from './Order.module.scss';
 import Button from '../Button/Button';
 import axios from 'axios';
+import { faX } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
 function Order({ data, icon }) {
+  console.log(data.Address);
   if (!data) {
     return null;
   }
@@ -33,7 +35,7 @@ function Order({ data, icon }) {
   const handleChangeStatus = async (id) => {
     await axios
       .put(
-        `https://pbl5-server-shpk.onrender.com/api/order/changeStatus/${id}`,
+        `http://localhost:5000/api/order/changeStatus/${id}`,
         {},
         {
           headers: {
@@ -75,6 +77,8 @@ function Order({ data, icon }) {
     );
   } else if (data.id_Status === 3) {
     iconComponent = <FontAwesomeIcon className={cx('icon')} icon={icon} beat />;
+  } else if (data.id_Status === 4) {
+    iconComponent = <FontAwesomeIcon className={cx('icon')} icon={faX} beat />;
   } else {
     iconComponent = null;
     buttonComponent = null;
@@ -100,7 +104,7 @@ function Order({ data, icon }) {
       <div className={cx('name-order')}>{data.FirstName + ' ' + data.LastName}</div>
 
       <div className={cx('day-order')}>{formattedDate}</div>
-      <div className={cx('time-order')}>{formattedTime}</div>
+      <div className={cx('address')}>{data.OrderAddress}</div>
       <div className={cx('price-order')}>
         {data.totalPrice.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }).replace('₫', '')}
       </div>

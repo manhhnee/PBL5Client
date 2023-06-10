@@ -36,7 +36,7 @@ function History() {
 
   useEffect(() => {
     const getApiHistoryOrder = async () => {
-      const response = await axios.get('https://pbl5-server-shpk.onrender.com/api/order/history', {
+      const response = await axios.get('http://localhost:5000/api/order/history', {
         headers: {
           Authorization: `Bearer ${getJwtFromCookie()}`,
         },
@@ -49,7 +49,7 @@ function History() {
   const handleCancelOrder = async (id) => {
     await axios
       .put(
-        `https://pbl5-server-shpk.onrender.com/api/order/cancel/${id}`,
+        `http://localhost:5000/api/order/cancel/${id}`,
         {},
         {
           headers: {
