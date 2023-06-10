@@ -9,7 +9,6 @@ import BookItem from '~/components/BookItem';
 import Button from '~/components/Button';
 import Image from '~/components/Image';
 import images from '~/assets/images';
-import MessengerPopup from '~/components/Chat/MessengerPopup';
 import axios from 'axios';
 import config from '~/config';
 
@@ -53,7 +52,6 @@ function Home() {
           </Button>
         </div>
       </div>
-      <MessengerPopup />
     </div>
   );
 }
