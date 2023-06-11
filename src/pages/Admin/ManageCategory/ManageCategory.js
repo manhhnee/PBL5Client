@@ -90,8 +90,10 @@ function ManageCategory() {
           Image: image,
         },
         {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${getJwtFromCookie}`,
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${getJwtFromCookie}`,
+          },
         },
       )
       .then((res) => {
