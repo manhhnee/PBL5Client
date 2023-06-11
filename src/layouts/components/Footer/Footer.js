@@ -57,12 +57,12 @@ function Footer() {
               <h3>TÌM HIỂU THÊM</h3>
             </div>
             <div className={cx('contents')}>
-              <div to={config.routes.introduce} className={cx('content-item')}>
+              <Link to={config.routes.introduce} className={cx('content-item')}>
                 Giới thiệu 2H&M
-              </div>
-              <div to={config.routes.privacy} className={cx('content-item')}>
+              </Link>
+              <Link to={config.routes.privacy} className={cx('content-item')}>
                 Chính sách bảo mật
-              </div>
+              </Link>
             </div>
           </div>
           <div className={cx('static')}>
