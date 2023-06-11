@@ -123,7 +123,8 @@ function Revenue() {
               align="center" // Vị trí chú thích (center, left, right)
               iconSize={14} // Căn chỉnh theo chiều dọc (top, middle, bottom)
             />
-            <Bar dataKey="revenue" fill="#8884d8" />
+            <Bar dataKey="revenue" fill="#8884d8" name="Revenue" />
+            <Bar dataKey="profit" fill="#82ca9d" name="Profit" />
           </BarChart>
         </div>
       </div>
