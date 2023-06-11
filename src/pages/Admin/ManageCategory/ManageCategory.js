@@ -91,8 +91,7 @@ function ManageCategory() {
         },
         {
           headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${getJwtFromCookie}`,
+            Authorization: `Bearer ${getJwtFromCookie()}`,
           },
         },
       )
