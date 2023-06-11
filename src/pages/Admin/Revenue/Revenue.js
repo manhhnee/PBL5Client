@@ -62,9 +62,10 @@ function Revenue() {
       const formattedData = response.data.chartRevenue.map((item) => ({
         revenue_date: moment(item.revenue_date).format('DD-MM-YYYY'),
         revenue: item.revenue,
+        profit: item.profit,
       }));
       setData(formattedData);
-      console.log(formattedData);
+      console.log(response.data.chartRevenue);
     };
 
     const fetchApiRevenueOfYear = async () => {

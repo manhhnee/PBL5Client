@@ -107,7 +107,12 @@ function ManageCategory() {
 
   const handleDeleteCategory = async () => {
     await axios
-      .delete(`https://pbl5-server-shpk.onrender.com/api/category/delete/${selectedCategoryId}`)
+      .delete(`https://pbl5-server-shpk.onrender.com/api/category/delete/${selectedCategoryId}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${getJwtFromCookie()}`,
+        },
+      })
       .then((res) => {
         toast.success(res.data.message);
         setTimeout(() => {
