@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { faTruckFast } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
